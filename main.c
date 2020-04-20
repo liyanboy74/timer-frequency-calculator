@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-	
-	long int i,j;
+	char ch;
+	int b,l;
+	float i,j,bb=1;
 	float k,o,freq,e;
 	
 	puts("Enter Fin:");
@@ -12,19 +13,22 @@ int main(int argc, char *argv[]) {
 	scanf("%f",&freq);
 	puts("Enter Max Error:");
 	scanf("%f",&e);
+	puts("Enter Size of Div1&2 (bit):");
+	scanf("%d",&b);
 	
-	printf("Starting... Div(16bit)\r\n");
-	for (i=1;i<0xfff+1;i++)
+	for(l=0;l<b;l++) bb=2*bb;	
+	
+	printf("Starting...\r\n");
+	for (i=1;i<bb+1;i++)
 	{
-	 for(j=1;j<0xffffff+1;j++)
+	 for(j=1;j<bb+1;j++)
 	 {
-	 	o=k/(i*j);
+	 	o=(float)k/(i*j);
 	 	if((o>=freq-e)&&(o<=freq+e))
-	 	printf("Fo=%f\tDiv1=%5x\tDiv2=%5x\tFin=%.0f\r\n",o,i-1,j-1,k);
+	 	printf("Fo=%f\tDiv1=%-5.0f\tDiv2=%-5.0f\tFin=%.0f\r\n",o,i-1,j-1,k);
 	 }
 	}
 	printf("END\r\n");
-	
-	while(1);
+	getch();
 	return 0;
 }
