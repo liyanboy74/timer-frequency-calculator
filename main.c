@@ -2,9 +2,8 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-	char ch;
-	int b,l;
-	float i,j,bb=1;
+	int b,l,flag=1;
+	float i=1,j=1,bb=1;
 	float k,o,freq,e;
 	
 	puts("Enter Fin:");
@@ -19,14 +18,21 @@ int main(int argc, char *argv[]) {
 	for(l=0;l<b;l++) bb=2*bb;	
 	
 	printf("Starting...\r\n");
-	for (i=1;i<bb+1;i++)
+	for (i=1;i<bb+1&&flag;i++)
 	{
-	 for(j=1;j<bb+1;j++)
-	 {
-	 	o=(float)k/(i*j);
-	 	if((o>=freq-e)&&(o<=freq+e))
-	 	printf("Fo=%f\tDiv1=%-5.0f\tDiv2=%-5.0f\tFin=%.0f\r\n",o,i-1,j-1,k);
-	 }
+		for(j=1;j<bb+1;j++)
+		{
+			o=(float)k/(i*j);
+			if((o>=freq-e)&&(o<=freq+e))
+			{
+				if(i>j)
+				{
+					flag=0;
+					break;
+				}
+				printf("Fo=%f\tDiv1=%-5.0f\tDiv2=%-5.0f\tFin=%.0f\r\n",o,i-1,j-1,k);	
+			}
+		}
 	}
 	printf("END\r\n");
 	getch();
