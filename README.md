@@ -1,7 +1,7 @@
 # Timer frequency calculator
 Timer frequency calculator for microcontrollers
 
-![Description](Description.jpg)
+![Description](https://user-images.githubusercontent.com/64005694/123369763-a3cd9480-d593-11eb-8dd4-33ff416f3022.jpg)
 
 This program can calculate all possible values of Div1 & Div2 relative to the input and output frequency.
 
