@@ -9,7 +9,8 @@ This program can calculate all possible values of Div1 & Div2 relative to the in
 ```
 mkdir build
 cd build
-cmake ..
+cmake -G "Unix Makefiles" ..
+make
 ```
 ### Example
 
